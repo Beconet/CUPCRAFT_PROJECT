@@ -27,10 +27,11 @@ body{
 }
  /*side bar*/
 .icon_button img {
-    width: 65px;
+    width: 55px;
 }
 .sidebar{
-    height: 80%;
+   
+    height: 100%;
  
 }
 .container_sidebar{
@@ -47,7 +48,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 50px;
     padding-bottom: 15px;
     
@@ -102,7 +103,7 @@ body{
 
   /*header*/
   .container-right{
-    margin-left:12%;
+    margin-left: 260px;
     padding-left:20px ;
     width: 85%;
     transition: 0.25s;
@@ -147,32 +148,36 @@ body{
 .container_menu{
     margin-top: 20px;
     width: 100%;
+
     
 }
 .container_menu_box{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-      
-    
+ 
+
 }
 .menu{
-    padding:60px;
+    padding:40px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 40px;
-    margin-right: 45px;
+    margin-bottom: 25px;
+    margin-right: 50px;
     border-radius: 5%;
 
 }
 
 /* reciep*/
 .container_slip{
+
     display: none;
     margin-top: 20px;
     margin-right: 9%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
     height: 20%;
+
+   
+    
     
 }
 
@@ -181,16 +186,22 @@ body{
     padding: 20px 50px 50px 50px; 
     
 
+
 }
 
 .order_receipt_top{
+
     display: flex;
     justify-content: space-between;
+    
     
 }
 .row3{
     display: flex;
-    font-size: 20px;
+    font-size: 18px;
+    width: 100%;
+
+
 }
 
 .subtotal{
@@ -519,7 +530,7 @@ margin-top: 20px;
 .overflow_box{
     box-shadow: 6px 4px 8px 0 rgba(0, 0, 0, 0.2), 6px 6px 20px 6px rgba(0, 0, 0, 0.19);
     width: 90%;
-    height: 850px;
+    height: 600px;
     overflow: auto;
     border-radius: 50px;
 }
@@ -527,7 +538,7 @@ margin-top: 20px;
 .record_box{
     padding: 20px;
     display: flex ; 
-    width: 97%;
+
     justify-content: space-around;  
 
 }
@@ -539,7 +550,7 @@ margin-top: 20px;
     
 }
 .text_record_none_menu{
-    width: 400px;
+    width: 200px;
     
 }
 #recordNoneMenu{
@@ -547,7 +558,8 @@ margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 850px;
+    height: 500px;
+
 }
 
 .recordDiv{
@@ -558,8 +570,9 @@ margin-top: 20px;
     display: flex;
     margin-top: 40px;
     margin-bottom: 40px;
-    font-size: 25px;
+    font-size: 20px;
     align-items: center;     
+
 }
 .group1{
 
@@ -574,7 +587,7 @@ margin-top: 20px;
 
     width: 60px;
     border-radius: 50px;
-    margin-left: 130px ;
+    margin-left: 100px ;
     
 }
 .group2{
@@ -584,8 +597,8 @@ margin-top: 20px;
     display: flex;
 }
 .group3{
- 
-    margin-left: 60px;
+
+    margin-left: 20px;
     width: 275px;
     display: flex;
     justify-content: center;
@@ -600,21 +613,22 @@ margin-top: 20px;
 }
 .group5{
 
-    margin-left: 50px ;
+    margin-left: 20px ;
     width: 200px;
     display: flex;
     justify-content: center;
 }
 .group6{
 
-    margin-left: 100px ;
+    margin-left: 80px ;
     width: 50px;
     display: flex;
     justify-content: center;
 }
 .group7{
 
-    margin-left: 130px ;
+    margin-left: 100px ;
+    margin-right: 60px ;
     width: 200px;
     display: flex;
     justify-content: center;

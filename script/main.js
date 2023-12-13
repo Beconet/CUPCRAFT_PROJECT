@@ -148,7 +148,7 @@ more_btn.addEventListener('click',function(){
 
         more_btn.style.transform = "";
         container_sidebar.style.width = "200px";
-        container_right.style.marginLeft ="280px";
+        container_right.style.marginLeft ="260px";
         container_slip.style.display = "none";
     }else{
         console.log("error,please reset program");
