@@ -675,10 +675,10 @@ function updateCartRecipe(item){
 
     let coffeeMinus = document.createElement("img")
     coffeeMinus.classList.add("btn_add_on_cart_smail");
-    coffeeMinus.src = `images/icon/Reduce_Icon.png`;
+    coffeeMinus.src = `images/icon/Reduce_icon.png`;
     coffeeMinus.alt = "Minus image button";
     coffeeMinus.addEventListener('click',function(){
-        reduceFromCart(`${item}`)
+        reduceFromCart(`${item}`);
     });
 
     let coffeeQuantity = document.createElement("span")
