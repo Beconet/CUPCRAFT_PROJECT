@@ -1,0 +1,619 @@
+/*color use
+#212121 black color
+#FFF1E0 cream color
+#a39a8f cream + grey color
+#F8F8F8 white color
+*/
+ /*set up*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#preloader{
+    background: #F8F8F8 url(logo.png) no-repeat center center ;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+body{
+    background-color: #F8F8F8;
+    font-family: 'Inter', sans-serif;
+}
+.container{
+    background-color: #F8F8F8;
+    display: block;
+    /*block here*/
+}
+ /*side bar*/
+.icon_button img {
+    width: 65px;
+}
+.sidebar{
+    height: 80%;
+ 
+}
+.container_sidebar{
+    padding: 10px;
+    position: fixed;
+    background-color: #212121;
+    height: 100%;
+    width: 200px;
+    transition: 0.25s;
+
+}
+.icon_button{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding-bottom: 15px;
+    
+   
+}
+  .icon_button_btn{
+
+    text-decoration: none;
+    background-color: #212121;
+    border: none;
+    height: 150px;
+    width: 175px;
+    padding-top: 10px;
+    transition: 0.25s;
+  }
+
+  .icon_button_btn:hover{
+    background-color:#4d4d4d ;
+    border-radius: 15px ;
+    
+  }
+  .icon_button_btn img{
+    margin-bottom: 15px;
+  }
+  .text_home{
+    font-size: 20px;
+    color: #FFF1E0;
+    background-color: #cabfb1;
+    border-radius: 25px;
+    height: 35px;
+    padding-top: 10px;
+}
+  .text_dashboard{
+    font-size: 20px;
+    color: #a39a8f;
+    background-color:none ;
+    border-radius: 25px;
+    height: 35px;
+    padding-top: 10px;
+}
+  .text_record{
+    font-size: 20px;
+    color: #a39a8f;
+    background-color: none;
+    border-radius: 25px;
+    height: 35px;
+    padding-top: 10px;
+}
+  .icon_button_btn p {
+    transition: 0.25s;
+  }
+
+  /*header*/
+  .container-right{
+    margin-left:12%;
+    padding-left:20px ;
+    width: 85%;
+    transition: 0.25s;
+   
+
+  }
+.title{
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    .profile{
+        margin-right:150px ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+.head_text{
+    
+    font-size: 45px;
+    transition: 0.25s;
+}
+.title_profile{
+    margin-right: 10px;
+}
+.logout_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    flex-wrap: wrap;
+}
+.logout{
+    margin-right: 10px;
+}
+.home_page{
+    display: block ;
+}
+.container_menu{
+    margin-top: 20px;
+    width: 100%;
+    
+}
+.container_menu_box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+      
+    
+}
+.menu{
+    padding:60px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 40px;
+    margin-right: 45px;
+    border-radius: 5%;
+
+}
+
+/* reciep*/
+.container_slip{
+    display: none;
+    margin-top: 20px;
+    margin-right: 9%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    height: 20%;
+    
+}
+
+.container_slip_box{
+    width: 300px;
+    padding: 20px 50px 50px 50px; 
+    
+
+}
+
+.order_receipt_top{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.row3{
+    display: flex;
+    font-size: 20px;
+}
+
+.subtotal{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.discount{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.tax{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.input_box{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.input_field{
+    margin-top: 10px;
+    padding: 10px;
+    width: 250px;
+    font-size: 15px;
+    border-radius: 25px;
+}
+/**/
+.edit_container{
+  
+    background-color: #F8F8F8;
+    position: fixed;
+    width:80%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+.edit_menu{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 60%;
+    
+}
+.edit_btn{
+    margin-bottom: 40px;
+}
+#add_menu_btn{
+    background-color: #35291B;
+    color: #FFF1E0;
+    padding: 10px;
+    border-radius: 10%;
+}
+#edit_menu_btn{
+    background-color: #7C746B;
+    color: #FFF1E0;
+    padding: 10px;
+    border-radius: 10%;
+}
+#delete_menu_btn{
+    background-color: #EC5050;
+    color: #FFF1E0;
+    padding: 10px;
+    border-radius: 10%;
+}
+#clear_receipt{
+    color: #474747 ;
+    border: none;
+    background-color: #F8F8F8;
+    font-size: 18px;
+}
+#clear_receipt:hover{
+    color: #aaaaaa ;
+}
+.later{
+    display: none;
+    margin-left:200px ;
+}
+.edit_menu_group{
+    display: none;
+}
+
+
+
+.dashboard_page{
+    display: none;
+}
+
+
+.menu_select_box{
+    display: none;
+
+}
+
+.btn_add_on_cart:hover{
+    background-color: #FFF1E0;
+}
+
+.btn_add_on_cart_smail{
+    width: 20px;
+}
+.btn_add_on_cart_smail:hover{
+    background-color: #FFF1E0;
+}
+
+.menu_select_box{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.in_select_box{
+    width: 50px;
+    
+}
+.menu_amount_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.remain_add{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.saveandprint{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+
+}
+.saveandprint_button{
+    border: none;
+    background-color: #35291B;
+    color: #FFF1E0;
+    width: 250px;
+    height: 70px;
+    border-radius: 25px;
+    font-size: 20px;
+}
+.saveandprint_button:hover{
+    background-color: #aca196;
+    color: #212121;
+}
+/* recipe print here*/
+.box_recipe{
+    display: none;
+    width: 1020px;
+    height: 1320px;
+    border: 1px solid black;
+
+}
+.recipe_top_another{
+    background-color: #35291B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10%;
+    padding: 20px;
+    -webkit-print-color-adjust: exact;
+}
+.recipe_top{
+    background: linear-gradient(to bottom, #35291B 50%, white 50%);
+    -webkit-print-color-adjust: exact;
+}
+
+.recipe_top_text{
+    color: #F8F8F8;
+    justify-content: center;
+    margin-right: 50px;
+}
+.recipe_top_image{
+    margin-left: 50px;
+}
+.recipe_text_thankyou{
+    margin-top: 20px;
+    margin-left: 50px;
+    font-size: 20px;
+}
+
+.recipe_column{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 90%;
+    font-size: 20px;
+}
+.recipe_column_box{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px ;
+}
+
+.recipe_column_box_left{
+    display: flex;
+    margin-left: 50px;
+}
+.recipe_column_box_right{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px
+
+}
+.recipe_container_footer_box{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px ;
+}
+.recipe_container_footer{
+    display: flex;
+    justify-content: space-between;
+    width: 850px;
+    font-size: 20px;
+
+}
+.recipe_Recipeint_box{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.signature{
+    display: block;
+
+}
+.recipe_Recipeint{
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    margin-left:50px;
+    font-size: 20px;
+}
+.recipe_infomation_payment{
+    text-align: right;
+}
+.signature_text{
+    margin-bottom: 10px ;
+}
+.recipe_queue{
+    display: flex;
+    justify-content: center;
+}
+.quere{
+    background-color: #35291B;
+    color: #FFF1E0;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 50px;
+    border-radius: 50%;
+    -webkit-print-color-adjust: exact;
+}
+
+.quereText{
+    font-size: 40px;
+}
+.youQueue{
+    font-size: 20px;
+}
+.footer{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.recipe_column_box_right_menuAmount{
+    width: 60px;
+    display: flex;
+    justify-content: center;
+}
+.recipe_column_box_right_menuPrice{
+    width: 60px;
+    display: flex;
+    justify-content: center;
+}
+.marginBruh{
+    margin-bottom: 20px;
+}
+.redText{
+    display: flex;
+    color: red;
+    justify-content: center;
+}
+
+.payment_recipe{
+    margin-bottom: 20px;
+}
+
+.topSales_container{
+margin-top: 20px;
+}
+
+.record_page{
+    display: none;
+    margin-top:50px ;
+
+}
+.record_type{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2%;
+    font-size: 20px;
+}
+.justtify7{
+    margin-right: 100px;
+}
+.overflow_box{
+    box-shadow: 6px 4px 8px 0 rgba(0, 0, 0, 0.2), 6px 6px 20px 6px rgba(0, 0, 0, 0.19);
+    width: 90%;
+    height: 850px;
+    overflow: auto;
+    border-radius: 50px;
+}
+
+.record_box{
+    padding: 20px;
+    display: flex ; 
+    width: 97%;
+    justify-content: space-around;  
+
+}
+
+.recordUserBox{
+    width: 95%;
+    display: block;
+    justify-content: space-around;
+    
+}
+.text_record_none_menu{
+    width: 400px;
+    
+}
+#recordNoneMenu{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 850px;
+}
+
+.recordDiv{
+    box-shadow: 6px 4px 8px 0 rgba(0, 0, 0, 0.2), 6px 6px 20px 6px rgba(0, 0, 0, 0.19);
+    border-radius: 50px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 25px;
+    align-items: center;     
+}
+.group1{
+
+    margin-left: 25px ;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    
+
+}
+.img_record{
+
+    width: 60px;
+    border-radius: 50px;
+    margin-left: 130px ;
+    
+}
+.group2{
+
+    margin-left: 10px ;
+    width: 100px;
+    display: flex;
+}
+.group3{
+ 
+    margin-left: 60px;
+    width: 275px;
+    display: flex;
+    justify-content: center;
+
+}
+.group4{
+
+    margin-left: 10px ;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+.group5{
+
+    margin-left: 50px ;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+.group6{
+
+    margin-left: 100px ;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+}
+.group7{
+
+    margin-left: 130px ;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+
+}

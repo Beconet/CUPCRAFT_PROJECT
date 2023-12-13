@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CupCraft</title>
+    <link rel="stylesheet" href="style\main_page.css">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+
+        <div id="preloader"></div>
+
+    
+    <div class="container">
+    <!-- sidebar  -->
+    <!-------------------------sidebar---------------------------------->
+    <div class="container_sidebar" id="container_sidebar">
+    <div class="sidebar">
+        <div class="icon_button">
+            <button class="icon_button_btn" id="home_btn">
+                <img src="images\icon\home_icon.png">
+                <p class="text_home" id="text_sidebar_home">HOME</p>
+            </button>
+        </div>
+        <div class="icon_button">
+            <button class="icon_button_btn" id="dashboard_btn">
+                <img src="images\icon\dashboard_icon.png">
+                <p class="text_dashboard" id="text_sidebar_dashboard">DASHBOARD</p>
+                </button>
+            </a>
+
+        </div>
+        <div class="icon_button" >
+           <button class="icon_button_btn">
+            <img src="images\icon\record_icon.png" id="record_btn">
+                <p class="text_record" id="text_sidebar_record">RECORD</p>
+           </button>
+
+        </div>
+        <div class="icon_button">
+            <button class="icon_button_btn" id="more_btn">
+                <img src="images\icon\more_icon.png">
+            </button>
+        </div>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container-right" id="container-right">
+    <!-------------------------TOP HERE---------------------------------->
+    <!-- top  -->
+
+    <div class="container_title">
+        <div class="container_title_box">
+            <div class="title">    
+                <span class="title_text">
+                    <span class="head_text" id="head_text">HOME PAGE</span>
+                </span> 
+                <span class="profile">     
+                <span class="title_profile">
+                    <img src="images\profile\admin_profile.png">
+                </span>
+                <span class="title_logout">
+                    <a href="login_page.html" class="logout_btn">
+                        <span class="logout">LOGOUT</span>
+                    <img src="images\icon\logout_icon.png">
+                    </a>
+                </span>
+            </span>  
+                
+            </div>
+        </div>
+    </div>
+
+
+    <!----------------------- HOME PAGE HERE---------------------------->
+    <div class="home_page" id="home_page">
+    <!-- category menu  -->
+
+
+    <!----------------------- Menu  HERE---------------------------->
+    <!-- menu  -->
+    <div class="row3">
+    <div class="container_menu">
+        <div class="container_menu_box">
+    <div class="menu">
+        <img src="images\MENU\latte.png">
+        <div id="name_menu">LATTE</div>
+        <div id="price_menu">125฿</div>
+        <div class="remain_add">
+            <span id="cupRemain_latte">30 cups remain</span>
+            <img class="btn_add_on_cart" src="images\icon\add_icon.png" onclick="addToCart('latte')">
+        </div>
+       
+    </div>
+    <div class="menu">
+        <img src="images\MENU\americano.png">
+        <div>AMERICANO</div>
+        <div>125฿</div>
+        <div class="remain_add">
+            <span id="cupRemain_americano">30 cups remain</span>
+            <img src="images\icon\add_icon.png" class="btn_add_on_cart" onclick="addToCart('americano')" >
+        </div>
+        
+    </div>
+    <div class="menu">
+        <img src="images\MENU\greentea.png" >
+        <div>GREEN TEA</div>
+        <div>100฿</div>
+        <div class="remain_add">
+            <span id="cupRemain_greentea">45 cups remain</span>
+            <img src="images\icon\add_icon.png" class="btn_add_on_cart" onclick="addToCart('greentea')">
+        </div>
+       
+    </div>
+    <div class="menu">
+        <img src="images\MENU\cocoa.png">
+        <div>COCOA</div>
+        <div>130฿</div>
+        <div class="remain_add">
+            <span id="cupRemain_cocoa">25 cups remain</span>
+            <img src="images\icon\add_icon.png" class="btn_add_on_cart" onclick="addToCart('cocoa')">
+        </div>
+        
+    </div>
+    <div class="menu">
+        <img src="images\MENU\sweetmilk.png">
+        <div>SWEETMILK</div>
+        <div>130฿</div>
+        <div class="remain_add">
+            <span id="cupRemain_sweetmilk">30 cups remain</span>
+            <img src="images\icon\add_icon.png" class="btn_add_on_cart" onclick="addToCart('sweetmilk')">
+        </div>
+    </div>
+    </div>
+</div>
+
+
+
+<!----------------------- slip ALl  HERE---------------------------->
+    <div class="container_slip" id="container_slip">
+    <!----------------------- slip bar  HERE---------------------------->
+    <!-- slip bar  -->
+    <div class="container_slip_box">
+        <div class="result" id="result">
+        <div class="order_receipt">
+        <div class="order_receipt_top">
+            <h2 id="orderNum">order</h2>
+            <button id="clear_receipt">clear</button>
+        </div>
+        <div class="input_box">
+            <div>Customer Name</div>
+            <input type="text" id="customerName" placeholder="Name" class="input_field" autocomplete="off">
+        </div>
+        <div class="input_box">
+            <div>Customer Email</div>
+            <input type="email"id="customerEmail" placeholder="Email"  class="input_field" autocomplete="off">
+        </div>
+        <div class="input_box">
+            <div>Customer Receive Cash</div>
+            <input type="text"id="customerCash" placeholder="Receive Cash"  class="input_field" autocomplete="off">
+        </div>
+         
+   
+        </div>
+            <!----------------------------menu_select_box ------------------------->
+        
+          <div class="menu_select_box" id="menu_select_box">
+          </div>
+    <!----------------------- moneycalculate  HERE---------------------------->
+        <div class="moneycalculate">
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <span id="subtotal_price">0฿</span>
+            </div>
+            <div class="discount">
+                <span>Discount</span>
+                <span id="discount_price">0฿</span>
+            </div>
+            <div class="tax">
+                <span>Tax</span>
+                <span id="tax_price">0฿</span>
+            </div>
+
+
+            <div class="total">
+                <span>Toal</span>
+                <span id="total_price">0฿</span>
+            </div>
+
+            <div class="redText">
+                <span id="redText"></span>
+            </div>
+
+            <div class="saveandprint">
+                <button class="saveandprint_button" id="saveandprint_btn">Save & Print</button>
+         </div>
+   
+        </div>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+
+    </div><!------ close home page ------>
+
+    <div class="dashboard_page" id="dashboard_page">
+        <div class="month_container">
+            <div class="dashboard_top_text">
+                <div>Wil Update Every 1st In Month</div>
+            </div>
+                <canvas id="monthChart"height="4vh" width="20vw"></canvas>
+        </div>
+                <!-- script for chart-->
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <div class="topSales_container">
+                    <div>
+                        <h2>TopSales</h2>
+                        <div>will Update Every 1st In Month</div>
+                    </div>
+                    <div>     
+                        <canvas id="chart_topSales" height="9vh" width="40vw"></canvas>
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                </div>
+        </div><!------ close dashboard ------>
+
+        <div class="record_page" id="record_page">
+            <div class="record_type">
+                <div class="justtify1">
+                    <span>NO.</span>
+                </div>
+                <div class="justtify2">
+                    <span>PRODUCT ID</span>
+                </div>
+                <div class="justtify3">
+                    <span>NAME</span>
+                </div>
+                <div class="justtify4">
+                    <span>LOCATION</span>
+                </div>
+                <div class="justtify5">
+                    <span>DATE</span>
+                </div>
+                <div class="justtify6">
+                    <span>AMOUNT</span>
+                </div>
+                <div class="justtify7">
+                    <span>STATUS</span>
+                </div>
+            </div>
+            <div class="overflow_box">
+                <div id="record_box" class="record_box">
+                    <div id="recordUserBox" class="recordUserBox">
+
+                        <div id="recordNoneMenu">
+                            <img class="text_record_none_menu" src="images\logo.png">
+                        </div>
+
+                    </div>
+                </div>
+               
+            </div>
+    </div>
+    </div> 
+    
+
+    </div> <!------ close container-right ------>
+
+    </div>  
+    </div> <!------ close container ------>
+
+
+</div>
+
+<div class="box_recipe" id="box_recipe">
+        <div class="recipe_top">
+        <div class="recipe_top_another">
+            <div >
+                <img src="images\Mini_Logo.png" alt="" class="recipe_top_image">
+            </div>
+            <div class="recipe_top_text">
+                <span>Receipt : 34594599xxx</span>
+                <br>
+                <span>tax : 123433434B584343</span>
+            </div>
+        </div>
+        </div>
+        <div class="recipe_text_thankyou">
+            <div>
+                <h1 id="thxCustomerName" class="marginBruh">Thank you for using our service</h1>
+                <div id="thxCustomerEmail" class="marginBruh"></div>
+                <div class="marginBruh">By Admin Note</div>
+            </div>
+        </div>
+        <div class="recipe_column">
+            <div class="recipe_column_box">
+                <div class="recipe_column_box_left">
+                        <span>Item</span>
+                </div>
+                <div class="recipe_column_box_right">
+                        <span>Amount</span>
+                        <span>Price</span>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div id="recipe_container">
+
+        </div>
+        <div class="recipe_container_footer_box">
+             <div class="recipe_container_footer">
+                <span id="payment_date">Payment : 0/0/2023</span>
+                <span id="payment_total">Total : 0</span>
+            </div>
+        </div>
+        <hr>
+        <div class="recipe_Recipeint_box">
+        <div class="recipe_Recipeint">
+            <div class="signature">
+                <div class="signature_text">
+                    <span > Recipeint's Signature</span>
+                </div>
+                <div>
+                    <img src="images\icon\Vector.png" alt="Signature" class="signature_image">
+                </div>         
+             </div>
+             <div class="recipe_infomation_payment">
+                <div id="discount_recipe" class="payment_recipe">discount : 0%</div>
+                <div id="totalAmount_recipe" class="payment_recipe">Total amount: 0.-</div>
+                <div id="receiveCash_recipe" class="payment_recipe">Receive cash: 0.-</div>
+                <div id="cashReceived_recipe" class="payment_recipe">Cash received: 0.-</div>
+             </div>
+        </div>
+        </div>
+        <div class="recipe_queue">
+            <div class="recipe_queue_box">
+                <div class="youQueue">Your queue number is</div>
+                <div class="quere">
+                        <span id="quereText" class="quereText">0000</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span>Business address Phaholyotin Rd, Klong 1,Klong luang</span>
+            <span>Pathumthani 12120</span>
+        </div>
+</div>
+
+
+<script src="script\main.js"></script>
+</div>
+</body>
+</html>

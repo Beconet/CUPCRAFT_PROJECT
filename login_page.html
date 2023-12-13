@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style\login_page.css">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+
+    
+</head>
+<body>
+    <div id="preloader"></div>
+    <div class="box">
+        <div class="container">
+            <div class="image">
+             <img src="images/logo.png" alt="logo_cupcraft">
+            </div>
+            <form id="myForm" method="get">
+                <div class="insent_box">
+                    <div class="text_box">
+                    <label for="username" class="text">UserName : </label>
+                </div>
+                    <div class="container_box">
+                        <input type="text" class="input" name="username" id="username"  required>
+                    </div>
+                    <div class="text_box">
+                    <label for="password" class="text">Password : </label>
+                </div>
+                    <div class="container_box">
+                        <input type="password" class="input" name="password" id="password" required>
+                    </div>
+                <div class="image">
+                    <img src="images\bar.png" alt="bar_image">
+                </div>
+                <div class="container_box">
+                    <p id="required_text"></p>
+                </div>
+                <div class="container_box">
+                    <input type="submit" class="submit_button" value="LOGIN" onclick="clickLogin()">
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script\login.js"></script>
+</body>
+</html>
