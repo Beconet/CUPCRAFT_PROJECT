@@ -675,7 +675,7 @@ function updateCartRecipe(item){
 
     let coffeeMinus = document.createElement("img")
     coffeeMinus.classList.add("btn_add_on_cart_smail");
-    coffeeMinus.src = `images/icon/Reduce_Icon.png`;
+    coffeeMinus.src = `images/icon/Reduce_icon.png`;
     coffeeMinus.alt = "Minus image button";
     coffeeMinus.addEventListener('click',function(){
         reduceFromCart(`${item}`)
@@ -686,7 +686,7 @@ function updateCartRecipe(item){
 
     let coffeePlus = document.createElement("img")
     coffeePlus.classList.add("btn_add_on_cart_smail");
-    coffeePlus.src = `images/icon/add_Icon.png`;
+    coffeePlus.src = `images/icon/add_icon.png`;
     coffeePlus.alt = `Plus image button`;
     coffeePlus.addEventListener('click',function(){
         addToCart(`${item}`);
