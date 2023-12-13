@@ -382,7 +382,7 @@ print.addEventListener('click', function () {
     let customerName = document.getElementById("customerName").value;
     let customerEmail = document.getElementById("customerEmail").value;
     let customerCash = document.getElementById("customerCash").value;
-
+    
 
     if (collectMenu.length === 0) {
         redText.style.display = "flex";
@@ -422,11 +422,11 @@ print.addEventListener('click', function () {
             }
         }
 
-
         redText.style.display = "none";
         redText.innerText = "";
         redText.style.fontSize = "";
         afterCheck();
+
     }
 });
 
@@ -460,7 +460,8 @@ function afterCheck(){
         let customerName = document.getElementById("customerName").value;
         let customerEmail = document.getElementById("customerEmail").value;
         let customerCash = document.getElementById("customerCash").value;
-        
+        console.log(customerName,customerEmail,customerCash)
+
         let receiveCashRrecipe = document.getElementById("receiveCash_recipe");
         let cashReceivedRecipe = document.getElementById("cashReceived_recipe");
         
@@ -468,11 +469,13 @@ function afterCheck(){
             thxCustomerName.innerText = `Thank you for using our service : ${customerName}!`;
         }else{
             customerName = "underdifind"
+            thxCustomerName.innerText = `Thank you for using our service!`;
         }
         if(customerEmail != ""){
             thxCustomerEmail.innerText = `Custom Email : ${customerEmail}`;
         }else{
             customerEmail = "underdifind"
+            thxCustomerEmail.innerText = ``;
         }
         if(customerCash != ""){
             let totalCash = customerCash - totalP
@@ -583,6 +586,8 @@ function afterCheck(){
         document.getElementById("customerName").value = "";
         document.getElementById("customerEmail").value = ""; 
         document.getElementById("customerCash").value = ""; 
+
+
 
         container_sidebar.style.display = 'block';
         container_right.style.display = 'block';
