@@ -378,174 +378,225 @@ let americanoAmount = 0
 let greenTeaAmount = 0
 let CocoaAmount = 0
 let sweetmilkAmount = 0
+print.addEventListener('click', function () {
+    let customerName = document.getElementById("customerName").value;
+    let customerEmail = document.getElementById("customerEmail").value;
+    let customerCash = document.getElementById("customerCash").value;
 
-print.addEventListener('click',function(){
-    if (collectMenu.length === 0){
-        let redText = document.getElementById("redText");
+
+    if (collectMenu.length === 0) {
         redText.style.display = "flex";
         redText.innerText = "Please Select Menu";
-    }else if(collectMenu.length !== 0){
-        let MenuList = ""
-        for(let i = 0;i < collectMenu.length;i++){
-            let splitMenu = `${collectMenu[i][0]} : x${collectMenu[i][1]} = ${collectMenu[i][2]}$` + "\n";
-            MenuList += splitMenu;
-        } 
-        let text = `Confirm order?!\nPlease check order before click Ok.\n${MenuList}`;
-        if (confirm(text) == true) {
+        redText.style.fontSize = "";
+    } else {
+        if (customerName !== "") {
+            if (!/^[A-Za-z]+$/.test(customerName)) {
+                redText.style.display = "flex";
+                redText.innerText = "Customer Name Should be letters only.";
+                redText.style.fontSize = "15px";
+                return; 
+            }
+        }
+
+        if (customerEmail !== "") {
+            if (!isValidEmail(customerEmail)) {
+                redText.style.display = "flex";
+                redText.innerText = "Invalid email address.";
+                redText.style.fontSize = "";
+                return; 
+            }
+        }
+
+        if (customerCash !== "") {
+            if (isNaN(customerCash) || isNaN(parseFloat(customerCash))) {
+                redText.style.display = "flex";
+                redText.innerText = "Cash Should input number only.";
+                redText.style.fontSize = "18px";
+                return; 
+            }
+            if(customerCash < totalP){
+                redText.style.display = "flex";
+                redText.innerText = "Cash Should more then total price";
+                redText.style.fontSize = "18px";
+                return; 
+            }
+        }
+
+
+        redText.style.display = "none";
+        redText.innerText = "";
+        redText.style.fontSize = "";
+        afterCheck();
+    }
+});
+
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function afterCheck(){
+    let MenuList = ""
+    for(let i = 0;i < collectMenu.length;i++){
+        let splitMenu = `${collectMenu[i][0]} : x${collectMenu[i][1]} = ${collectMenu[i][2]}$` + "\n";
+        MenuList += splitMenu;
+    } 
     
-            container_sidebar.style.display = 'none';
-            container_right.style.display = 'none';
-            headText.style.display = 'none';
-            box_recipe.style.display = "block";
-            console.log(collectMenu);
+    let text = `Confirm order?!\nPlease check order before click Ok.\n${MenuList}`;
+    if (confirm(text) == true) {
+        container_sidebar.style.display = 'none';
+        container_right.style.display = 'none';
+        headText.style.display = 'none';
+        box_recipe.style.display = "block";
+        console.log(collectMenu);
 
 
-            let quereText = document.getElementById("quereText");
-            quereText.innerText = `${order}`;
-            order += 1
-            orderNum.innerText = `Order ${order}`;
-            let customerName = document.getElementById("customerName").value;
-            let customerEmail = document.getElementById("customerEmail").value;
-            let customerCash = document.getElementById("customerCash").value;
-            
-            let receiveCashRrecipe = document.getElementById("receiveCash_recipe");
-            let cashReceivedRecipe = document.getElementById("cashReceived_recipe");
-            
-            if(customerName != ""){
-                thxCustomerName.innerText = `Thank you for using our service : ${customerName}!`;
-            }else{
-                customerName = "underdifind"
-            }
-            if(customerEmail != ""){
-                thxCustomerEmail.innerText = `Custom Email : ${customerEmail}`;
-            }else{
-                customerEmail = "underdifind"
-            }
-            if(customerCash != ""){
-                let totalCash = customerCash - totalP
-                receiveCashRrecipe.innerText = `Receive cash : ${customerCash}.-`
-                cashReceivedRecipe.innerText = `Cash recived : ${totalCash.toFixed(2)}.-`
+        let quereText = document.getElementById("quereText");
+        quereText.innerText = `${order}`;
+        order += 1
+        orderNum.innerText = `Order ${order}`;
 
-            }else{
-                receiveCashRrecipe.innerText = ``
-                cashReceivedRecipe.innerText = ``
-            }
+        let customerName = document.getElementById("customerName").value;
+        let customerEmail = document.getElementById("customerEmail").value;
+        let customerCash = document.getElementById("customerCash").value;
+        
+        let receiveCashRrecipe = document.getElementById("receiveCash_recipe");
+        let cashReceivedRecipe = document.getElementById("cashReceived_recipe");
+        
+        if(customerName != ""){
+            thxCustomerName.innerText = `Thank you for using our service : ${customerName}!`;
+        }else{
+            customerName = "underdifind"
+        }
+        if(customerEmail != ""){
+            thxCustomerEmail.innerText = `Custom Email : ${customerEmail}`;
+        }else{
+            customerEmail = "underdifind"
+        }
+        if(customerCash != ""){
+            let totalCash = customerCash - totalP
+            receiveCashRrecipe.innerText = `Receive cash : ${customerCash}.-`
+            cashReceivedRecipe.innerText = `Cash recived : ${totalCash.toFixed(2)}.-`
 
-            for(let i = 0; i < collectMenu.length;i++){
-                console.log(collectMenu[i])
-                let menuDiv = document.createElement("div");
-                menuDiv.classList.add("recipe_column");
-                menuDiv.id = "menudiv"
-                let menuBox = document.createElement("div");
-                menuBox.classList.add("recipe_column_box");
-                menuBox.id = "menuBox"
-            
-                let menuBoxLeft = document.createElement("div");
-                menuBoxLeft.classList.add("recipe_column_box_left");
-                let menuName = document.createElement("span");
-                menuName.innerText= `${collectMenu[i][0]}`
-        
-                let menuBoxRight = document.createElement("div");
-                menuBoxRight.classList.add("recipe_column_box_right");
-                let menuAmount = document.createElement("span");
-                menuAmount.classList.add("recipe_column_box_right_menuAmount");
-                let menuPrice = document.createElement("span");
-                menuPrice.classList.add("recipe_column_box_right_menuPrice");
-                menuAmount.innerText= `X${collectMenu[i][1]}`
-                menuPrice.innerText= `${collectMenu[i][2].toFixed(2)}.-`
-        
-                menuBoxRight.appendChild(menuAmount);
-                menuBoxRight.appendChild(menuPrice);
-        
-                menuBoxLeft.appendChild(menuName);
-        
-                menuBox.appendChild(menuBoxLeft);
-                menuBox.appendChild(menuBoxRight);
-        
-                menuDiv.appendChild(menuBox);
-                recipe_container.appendChild(menuDiv);
-                
-                
-            }
-            //setpayment
-            let texDiv = document.createElement("div");
-            texDiv.classList.add("recipe_column");
-            texDiv.id = "menudiv"
+        }else{
+            receiveCashRrecipe.innerText = ``
+            cashReceivedRecipe.innerText = ``
+        }
+
+        for(let i = 0; i < collectMenu.length;i++){
+            console.log(collectMenu[i])
+            let menuDiv = document.createElement("div");
+            menuDiv.classList.add("recipe_column");
+            menuDiv.id = "menudiv"
             let menuBox = document.createElement("div");
             menuBox.classList.add("recipe_column_box");
             menuBox.id = "menuBox"
-    
-
+        
             let menuBoxLeft = document.createElement("div");
             menuBoxLeft.classList.add("recipe_column_box_left");
-            let taxName = document.createElement("span");
-            taxName.innerText = "TAX"
-
+            let menuName = document.createElement("span");
+            menuName.innerText= `${collectMenu[i][0]}`
+    
             let menuBoxRight = document.createElement("div");
             menuBoxRight.classList.add("recipe_column_box_right");
             let menuAmount = document.createElement("span");
             menuAmount.classList.add("recipe_column_box_right_menuAmount");
             let menuPrice = document.createElement("span");
             menuPrice.classList.add("recipe_column_box_right_menuPrice");
-            menuPrice.innerText= `${taxP.toFixed(2)}.-`
-            menuAmount.innerText= ` `
+            menuAmount.innerText= `X${collectMenu[i][1]}`
+            menuPrice.innerText= `${collectMenu[i][2].toFixed(2)}.-`
+    
             menuBoxRight.appendChild(menuAmount);
             menuBoxRight.appendChild(menuPrice);
-
-            menuBoxLeft.appendChild(taxName);
-            
+    
+            menuBoxLeft.appendChild(menuName);
+    
             menuBox.appendChild(menuBoxLeft);
             menuBox.appendChild(menuBoxRight);
-
-            texDiv.appendChild(menuBox);
-            recipe_container.appendChild(texDiv);
-
-
-            let paymentTotal = document.getElementById("payment_total");
-            paymentTotal.innerText = `total : ${totalP.toFixed(2)}฿`
-            let totalAmountRecipe = document.getElementById("totalAmount_recipe");
-            totalAmountRecipe.innerText = `Total Amount : ${totalP.toFixed(2)}.-`
-
-            window.print();
-            recordNoneMenu.style.display  = "none";
-            //after print all data collect and reset quantity then get back to home page
-            backUpMenu = collectMenu;
-            //let record = [no,productID,name,location,date,amount,status]
-            updateRecord(collectMenu,customerName)
-            //set for display 
-            afterClickSavePrint = true;
-            let nameMenuForReset;
-            ////////////////////////chill chill///////////////////////
-            useUpdatedValues();
-            //console.log(latteAmount,americanoAmount,greenTeaAmount,CocoaAmount,sweetmilkAmount)
-            afterClickSavePrint = false;
-            subP = 0;
-            disP = 0;
-            taxP = 0;
-            totalP = 0;
-            subtotalPrice.innerText = `${subP}$`;
-            taxPrice.innerText = `${taxP}$`;
-            totalPrice.innerText = `${totalP}$`;
-            collectMenu = []
-            document.getElementById("customerName").value = "";
-            document.getElementById("customerEmail").value = ""; 
-            document.getElementById("customerCash").value = ""; 
-
-            container_sidebar.style.display = 'block';
-            container_right.style.display = 'block';
-            headText.style.display = 'flex';
-            box_recipe.style.display = "none"; 
-
-            let recipeContainer = document.getElementById("recipe_container");
-            let menuDiv = document.querySelectorAll("#menudiv");
-            menuDiv.forEach(menuDiv => {
-                recipeContainer.removeChild(menuDiv);
-            });
-           
+    
+            menuDiv.appendChild(menuBox);
+            recipe_container.appendChild(menuDiv);
+            
+            
         }
-    }  
-})
+        //setpayment
+        let texDiv = document.createElement("div");
+        texDiv.classList.add("recipe_column");
+        texDiv.id = "menudiv"
+        let menuBox = document.createElement("div");
+        menuBox.classList.add("recipe_column_box");
+        menuBox.id = "menuBox"
 
+
+        let menuBoxLeft = document.createElement("div");
+        menuBoxLeft.classList.add("recipe_column_box_left");
+        let taxName = document.createElement("span");
+        taxName.innerText = "TAX"
+
+        let menuBoxRight = document.createElement("div");
+        menuBoxRight.classList.add("recipe_column_box_right");
+        let menuAmount = document.createElement("span");
+        menuAmount.classList.add("recipe_column_box_right_menuAmount");
+        let menuPrice = document.createElement("span");
+        menuPrice.classList.add("recipe_column_box_right_menuPrice");
+        menuPrice.innerText= `${taxP.toFixed(2)}.-`
+        menuAmount.innerText= ` `
+        menuBoxRight.appendChild(menuAmount);
+        menuBoxRight.appendChild(menuPrice);
+
+        menuBoxLeft.appendChild(taxName);
+        
+        menuBox.appendChild(menuBoxLeft);
+        menuBox.appendChild(menuBoxRight);
+
+        texDiv.appendChild(menuBox);
+        recipe_container.appendChild(texDiv);
+
+
+        let paymentTotal = document.getElementById("payment_total");
+        paymentTotal.innerText = `total : ${totalP.toFixed(2)}฿`
+        let totalAmountRecipe = document.getElementById("totalAmount_recipe");
+        totalAmountRecipe.innerText = `Total Amount : ${totalP.toFixed(2)}.-`
+
+        window.print();
+        recordNoneMenu.style.display  = "none";
+        //after print all data collect and reset quantity then get back to home page
+        backUpMenu = collectMenu;
+        //let record = [no,productID,name,location,date,amount,status]
+        updateRecord(collectMenu,customerName)
+        //set for display 
+        afterClickSavePrint = true;
+        let nameMenuForReset;
+        ////////////////////////chill chill///////////////////////
+        useUpdatedValues();
+        //console.log(latteAmount,americanoAmount,greenTeaAmount,CocoaAmount,sweetmilkAmount)
+        afterClickSavePrint = false;
+        subP = 0;
+        disP = 0;
+        taxP = 0;
+        totalP = 0;
+        subtotalPrice.innerText = `${subP}$`;
+        taxPrice.innerText = `${taxP}$`;
+        totalPrice.innerText = `${totalP}$`;
+        collectMenu = []
+        document.getElementById("customerName").value = "";
+        document.getElementById("customerEmail").value = ""; 
+        document.getElementById("customerCash").value = ""; 
+
+        container_sidebar.style.display = 'block';
+        container_right.style.display = 'block';
+        headText.style.display = 'flex';
+        box_recipe.style.display = "none"; 
+
+        let recipeContainer = document.getElementById("recipe_container");
+        let menuDiv = document.querySelectorAll("#menudiv");
+        menuDiv.forEach(menuDiv => {
+            recipeContainer.removeChild(menuDiv);
+        });
+       
+    }
+}
 //Function to Update Value Amount and Chart in Dashboard
 
 const topsale = document.getElementById('chart_topSales');

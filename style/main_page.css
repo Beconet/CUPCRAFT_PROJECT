@@ -485,9 +485,12 @@ body{
     margin-bottom: 20px;
 }
 .redText{
+   
     display: flex;
     color: red;
     justify-content: center;
+    align-items: center;
+   
 }
 
 .payment_recipe{
