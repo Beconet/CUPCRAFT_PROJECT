@@ -3,6 +3,8 @@
 **CupCraft** is a **front-end café management system** designed to help café owners streamline operations with an **e-commerce-style interface**.  
 It allows café managers to manage orders, track sales, and generate receipts with ease.
 
+Youtube demo : https://www.youtube.com/watch?v=noFwPKbjcas
+
 ## ✨ Features  
 ![Image](https://github.com/user-attachments/assets/2263413f-0b04-4a32-84e0-6c72a25aca11)
 ### 🔐 Admin Login  
@@ -49,10 +51,8 @@ This project is built using **Front-End** technologies:
    cd cupcraft
 
 
-
-Youtube demo : https://www.youtube.com/watch?v=noFwPKbjcas
-copy this link to start the demo : https://beconet.github.io/CUPCRAFT_PROJECT/login_page.html
+or open this link to start the demo : https://beconet.github.io/CUPCRAFT_PROJECT/login_page.html
 Username : admin
 Password : 123
 
-Project นี้เป็นส่วนหนี่งของวิชา CS436   
+This project is part of CS436   
